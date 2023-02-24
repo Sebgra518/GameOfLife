@@ -15,15 +15,31 @@ h1{
     text-align: center;
     font-family: sans-serif;
 }
-button{
+
+#controlsWrapper{
+    width: 300px;
+    overflow: hidden;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+#controlButton{
+    float: left;
     background-color: lime;
     border-width: 3px;
     border-color: black;
     font-family: sans-serif;
-    align-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
     font-weight: bold;
     cursor: pointer;
+    text-align: center;
+    
+}
+#sliderControl{
+    float: right;
+    right: 10%; 
+}
+#timeLabel{
+    font-size: 20px;
+    font-family: sans-serif;
 }

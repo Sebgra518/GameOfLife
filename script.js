@@ -3,11 +3,12 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var running = false;
 var controlButton = document.getElementById("controlButton");
-var time = 250;
+var slider = document.getElementById("timeSlider");
 var totalBlack = 0;
 
 let table = Array.from({ length: 25 }, (e) => Array(25).fill(0));
 let tempTable = Array.from({ length: 25 }, (e) => Array(25).fill(0));
+
 
 
 //Takes in table pos and draws a white pixel at the table pos
@@ -106,7 +107,7 @@ function runControl() {
         }
       }
       applyChanges();
-    }, time);
+    }, Math.abs(slider.value));
 
   }
 }
@@ -132,13 +133,20 @@ for (var x = 0; x < 25; x++) {
   }
 }
 
-//Place Alive Cell
+//Place or remove Alive Cell
 canvas.onclick = function (event) {
-  // e = Mouse click event.
   var rect = event.target.getBoundingClientRect();
-  //Note: -4 for the border          V
+
+  //Note: -4 for the border           V
   var x = event.clientX - rect.left - 4; //x position within the element.
   var y = event.clientY - rect.top - 4; //y position within the element.
+
+  if(table[screenPosToTablePos(y)][screenPosToTablePos(x)] == 0){
   drawBlackPixel(screenPosToTablePos(x), screenPosToTablePos(y));
   table[screenPosToTablePos(y)][screenPosToTablePos(x)] = 1;
+  } else {
+    drawWhitePixel(screenPosToTablePos(x), screenPosToTablePos(y));
+  table[screenPosToTablePos(y)][screenPosToTablePos(x)] = 0;
+  }
+
 };
