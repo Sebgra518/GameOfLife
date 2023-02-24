@@ -82,6 +82,15 @@ function applyChanges(){
   }
 }
 
+function clearAll(){
+  for(var y = 0; y < 25; y++){
+    for(var x = 0; x < 25; x++){
+      table[y][x] = 0
+      tempTable[y][x] = 0;
+      drawWhitePixel(x,y);
+    }
+  }
+}
 //Runs the game when button is clicked
 function runControl() {
   if (running) {

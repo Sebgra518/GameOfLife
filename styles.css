@@ -17,7 +17,7 @@ h1{
 }
 
 #controlsWrapper{
-    width: 300px;
+    width: 350px;
     overflow: hidden;
     display: block;
     margin-left: auto;
@@ -36,10 +36,18 @@ h1{
     
 }
 #sliderControl{
-    float: right;
-    right: 10%; 
+     display:inline-block;
 }
 #timeLabel{
     font-size: 20px;
     font-family: sans-serif;
+}
+#clearButton{
+    background-color: lightgrey;
+    border-width: 3px;
+    border-color: black;
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    float: right;
 }
